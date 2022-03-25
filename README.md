@@ -1,17 +1,36 @@
 # Quality Assurance engineer test
-Welcome to the QA Engineer tech test. We expect the work to take around 1 to 1.5 hours, and we thank
-you in advance for taking that time for us!
+This repo contains some simple test for simple web frontend app.
 
-This test consists of two parts: a written part and a coding part. For the written part, we would
-like to receive a PDF, slide presentation or MD file with your insights. For the coding part, a fork of this repo with
-your solution will do.
+## App description
+The app is Q&A generator.
 
-### Automated Testing Assignment
+It has 3 buttons with different functionality, 2 text inputs and < ul> < li> section
+![img.png](img.png)
+
+## Automated Testing Assignment
 You can fork (and then clone your own version of) this repo and run:
 
 ```
 $ python -m http.server 8000
 ```
 
-You now have a working frontend app that you will write some kind of automated user acceptence tests for.
-The language of framework you use does not matter, but we prefer JS, PHP or Python.
+For test was chosen set of technologies: `pytest` and `selenuim`. This is one of the most popular frameworks. 
+The framework include simple `PageObject` and library for elements such as `button`, `input` and `list`. 
+`PageObject` contains the most common use method for the page - add new question with an answer.
+
+### Tests description
+For run tests use 
+```commandline
+pytest tests
+```
+Test run include 3 test scenarios:
+
+    1. Can we create a question
+    2. Can we remove questions
+    3. Can we sort questions
+
+Every test open webdriver run scenario and close browser. It's done by pytest fixtures decorator.
+
+More info about tests in docstrings in code part 
+
+
